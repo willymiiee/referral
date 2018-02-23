@@ -16,8 +16,8 @@ class CreateNetworksTable extends Migration
         Schema::create('networks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('upline_id');
-            $table->integer('left_child_id');
-            $table->integer('right_child_id');
+            $table->integer('left_child_id')->nullable();
+            $table->integer('right_child_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
