@@ -16,8 +16,8 @@ class CreateEarningsTable extends Migration
         Schema::create('earnings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('member_id');
-            $table->decimal('bonus', 8, 2);
-            $table->string('type');
+            $table->decimal('bonus', 8, 2)->default(0);
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
